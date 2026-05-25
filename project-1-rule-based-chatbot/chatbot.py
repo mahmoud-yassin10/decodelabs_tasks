@@ -69,7 +69,7 @@ responses = {
     "give me an example of ai": "Examples of AI include chatbots, recommendation systems, self-driving cars, and voice assistants.",
     "what are ai applications": "AI is used in healthcare, finance, education, transportation, cybersecurity, and customer service.",
     "is ai the future": "AI is expected to play a major role in the future because it can improve efficiency and solve complex problems.",
-
+    "are you an ai": "Yes, I am a basic rule-based AI chatbot.",
     # 4. Machine learning basics
     "what is machine learning": "Machine learning is a branch of AI where computers learn patterns from data.",
     "what is supervised learning": "Supervised learning is when a model learns from labeled data, meaning the correct answers are already provided.",
@@ -138,10 +138,12 @@ while True:
         print("Bot:", responses[clean_input])
         break
 
-    reply = responses.get(
-        clean_input,
-        "I do not understand that yet, but I am still learning. Try asking about AI, Python, or this project."
-    )
+    elif clean_input == "help":
+        print(help_message)
 
-    print("Bot:", reply)
-    
+    else:
+        reply = responses.get(
+            clean_input,
+            "I do not understand that yet, but I am still learning. Try asking about AI, Python, or this project."
+        )
+        print("Bot:", reply)
