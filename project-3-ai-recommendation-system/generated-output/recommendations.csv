@@ -1,0 +1,6 @@
+﻿rank,user_interests,course_id,title,level,similarity_percentage,description
+1,"python, ai, automation",15,Artificial Intelligence Foundations,Beginner,52.42,"Explore artificial intelligence concepts, search algorithms, machine learning, and practical applications."
+2,"python, ai, automation",6,Automation with Python,Intermediate,39.86,"Automate repetitive tasks using Python scripts, file handling, and workflow automation."
+3,"python, ai, automation",1,Python for Beginners,Beginner,13.73,"Learn Python syntax, variables, loops, functions, and basic programming concepts."
+4,"python, ai, automation",5,Data Science with Python,Intermediate,9.97,"Analyze datasets using Python, NumPy, data preprocessing, and visualization techniques."
+5,"python, ai, automation",2,Advanced Python Programming,Advanced,9.68,"Build advanced Python applications using object-oriented programming, modules, and error handling."

@@ -1,0 +1,21 @@
+﻿course_id,title,description,tags,level
+1,Python for Beginners,"Learn Python syntax, variables, loops, functions, and basic programming concepts.",python programming beginner coding,Beginner
+2,Advanced Python Programming,"Build advanced Python applications using object-oriented programming, modules, and error handling.",python programming oop modules error handling,Advanced
+3,Machine Learning Fundamentals,"Understand supervised learning, classification, regression, datasets, and model evaluation using Python.",machine learning ai python classification regression data science,Intermediate
+4,Deep Learning Essentials,"Learn neural networks, activation functions, TensorFlow, and deep learning fundamentals.",deep learning neural networks tensorflow ai python,Advanced
+5,Data Science with Python,"Analyze datasets using Python, NumPy, data preprocessing, and visualization techniques.",python data science numpy preprocessing visualization analytics,Intermediate
+6,Automation with Python,"Automate repetitive tasks using Python scripts, file handling, and workflow automation.",python automation scripting productivity file handling,Intermediate
+7,Algorithms and Data Structures,"Learn searching, sorting, arrays, linked lists, stacks, queues, and algorithmic problem-solving.",algorithms data structures programming problem solving coding,Intermediate
+8,Web Development Essentials,"Build websites using HTML, CSS, and JavaScript.",html css javascript web development frontend,Beginner
+9,Frontend Development with React,"Create interactive user interfaces using React, JavaScript, HTML, and CSS.",react javascript html css frontend web development,Intermediate
+10,Backend Development with Django,Build server-side web applications and APIs using Python and Django.,python django backend api web development databases,Intermediate
+11,Cloud Computing Basics,"Understand cloud platforms, infrastructure, deployment, and scalable services.",cloud aws infrastructure deployment scalable services,Beginner
+12,AWS Cloud Practitioner,"Explore Amazon Web Services, cloud architecture, storage, security, and deployment.",aws cloud architecture storage security deployment,Intermediate
+13,Cybersecurity Fundamentals,"Learn network security, common threats, encryption, and safe computing practices.",cybersecurity security networks encryption threats,Beginner
+14,Database Design and SQL,"Learn relational databases, SQL queries, tables, joins, and data modeling.",sql databases data modeling relational queries backend,Beginner
+15,Artificial Intelligence Foundations,"Explore artificial intelligence concepts, search algorithms, machine learning, and practical applications.",ai artificial intelligence machine learning algorithms applications,Beginner
+16,Natural Language Processing,"Learn how machines process text using tokenization, TF-IDF, similarity, and language models.",nlp text processing tf-idf cosine similarity language models ai,Advanced
+17,Recommendation Systems with Python,Build content-based and collaborative recommendation systems using similarity metrics.,recommendation systems python content-based filtering collaborative filtering similarity,Advanced
+18,Mobile App Development with Flutter,Build cross-platform mobile applications using Flutter and Dart.,flutter dart mobile development apps cross-platform,Intermediate
+19,Git and GitHub Essentials,"Learn version control, repositories, branches, commits, and collaboration workflows.",git github version control repositories collaboration,Beginner
+20,Software Engineering Principles,"Learn software development life cycle, testing, clean code, documentation, and maintainability.",software engineering sdlc testing clean code documentation,Intermediate
