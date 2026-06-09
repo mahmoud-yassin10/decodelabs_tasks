@@ -1,0 +1,44 @@
+DecodeLabs OCR Text Recognition Pipeline
+======================================================================
+
+Tesseract executable: C:\Program Files\Tesseract-OCR\tesseract.exe
+Detected deskew angle: -0.63 degrees
+
+Selected OCR Configuration
+----------------------------------------------------------------------
+Preprocessing mode: original_deskewed
+Tesseract PSM mode: 3
+
+Accuracy Summary
+----------------------------------------------------------------------
+Total detected words: 24
+Validated words with confidence >= 80%: 24
+Validated ratio: 100.00%
+Average detected-word confidence: 95.96%
+
+Raw Extracted Text
+----------------------------------------------------------------------
+It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness...
+
+Validated Extracted Text
+----------------------------------------------------------------------
+It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness...
+
+Generated Files
+----------------------------------------------------------------------
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\01_original.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\02_grayscale.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\03_blurred.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\04_deskewed.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\05_otsu_threshold.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\06_adaptive_threshold.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\07_annotated_output.png
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\extracted_text.txt
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\validated_text.txt
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\ocr_confidence_report.csv
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\ocr_mode_comparison.csv
+C:\Mahmoud\Coding\Decode Labs\decodelabs_tasks\project-4-ocr-text-recognition\generated-output\ocr_summary.txt

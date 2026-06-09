@@ -1,0 +1,101 @@
+﻿preprocessing_mode,psm_mode,total_words,validated_word_count,validated_ratio,average_confidence,raw_text
+original_deskewed,3,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+original_deskewed,6,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+grayscale,3,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+grayscale,6,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+blurred,3,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+blurred,6,24,24,1.0000,95.96,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+blurred,11,24,24,1.0000,95.96,"It was the best of
+
+times, it was the worst
+
+of times, it was the age
+
+of wisdom, it was the
+
+age of foolishness..."
+original_deskewed,11,24,24,1.0000,95.83,"It was the best of
+
+times, it was the worst
+
+of times, it was the age
+
+of wisdom, it was the
+
+age of foolishness..."
+grayscale,11,24,24,1.0000,95.83,"It was the best of
+
+times, it was the worst
+
+of times, it was the age
+
+of wisdom, it was the
+
+age of foolishness..."
+adaptive_threshold,11,24,24,1.0000,95.54,"Te was the best of
+
+times, it was the worst
+
+of times, it was the age
+
+of wisdom, it was the
+
+age of foolishness..."
+adaptive_threshold,3,24,23,0.9583,94.75,"Te was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+adaptive_threshold,6,24,23,0.9583,94.75,"Te was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+otsu_threshold,3,24,23,0.9583,94.46,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+otsu_threshold,6,24,23,0.9583,94.46,"It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness..."
+otsu_threshold,11,24,23,0.9583,94.46,"It was the best of
+
+times, it was the worst
+
+of times, it was the age
+
+of wisdom, it was the
+
+age of foolishness..."
+original_deskewed,7,0,0,0.0000,0.00,
+grayscale,7,0,0,0.0000,0.00,
+blurred,7,0,0,0.0000,0.00,
+otsu_threshold,7,0,0,0.0000,0.00,
+adaptive_threshold,7,0,0,0.0000,0.00,
