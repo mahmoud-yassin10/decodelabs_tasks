@@ -1,76 +1,54 @@
-# Project 4: OCR Text Recognition Pipeline
+# Project 4: Advanced OCR Text Recognition Pipeline
 
 ## Overview
 
-This project is an advanced **Optical Character Recognition (OCR) pipeline** built using Python, OpenCV, and Tesseract OCR for the **DecodeLabs Artificial Intelligence Internship**.
+This project is an advanced **Optical Character Recognition (OCR) pipeline** built using Python, OpenCV, NumPy, and Tesseract OCR for the **DecodeLabs Artificial Intelligence Internship**.
 
-The system reads an image containing printed text, applies image preprocessing techniques, extracts text using Tesseract OCR, calculates word-level confidence scores, filters low-confidence detections, draws bounding boxes around validated words, and saves detailed output reports.
+The system reads an image containing printed text, applies multiple image-preprocessing techniques, extracts machine-readable text, calculates word-level confidence scores, filters low-confidence detections, draws bounding boxes around validated words, and saves detailed reports.
 
-The pipeline goes beyond basic OCR by automatically comparing multiple preprocessing strategies and Tesseract Page Segmentation Modes before selecting the strongest recognition result.
+The pipeline goes beyond the basic project requirements by automatically testing multiple preprocessing strategies and Tesseract Page Segmentation Modes before selecting the strongest OCR configuration.
 
 ---
 
 ## Project Goal
 
-The goal of this project is to build a functional recognition pipeline that can:
+The goal of this project is to build a functional text-recognition pipeline capable of:
 
-- Ingest raw visual data
-- Improve image quality using preprocessing
-- Extract machine-readable text
-- Calculate OCR confidence scores
-- Apply an 80% confidence threshold
-- Draw bounding boxes around validated words
-- Save readable text output
-- Save machine-readable confidence reports
-- Compare multiple OCR configurations
-- Select the strongest result automatically
-
----
-
-## Core Workflow
-
-```text
-Input Image
-→ Image Loading
-→ Deskewing
-→ Grayscale Conversion
-→ Gaussian Blur
-→ Thresholding
-→ OCR Recognition
-→ Confidence Filtering
-→ Bounding Boxes
-→ Extracted Text
-→ Reports
-```
+- Loading raw image input
+- Applying image preprocessing
+- Extracting readable text from an image
+- Measuring OCR confidence scores
+- Filtering low-confidence detections
+- Drawing bounding boxes around validated words
+- Comparing multiple OCR configurations
+- Selecting the strongest result automatically
+- Saving visual outputs and reports
 
 ---
 
-## Features
-
-This project includes:
+## Key Features
 
 - Tesseract OCR integration
 - OpenCV image processing
 - Automatic Tesseract executable discovery
-- Raw image loading
 - Grayscale conversion
 - Gaussian blur
 - Automatic deskewing
 - Otsu thresholding
 - Adaptive thresholding
 - Multiple preprocessing modes
-- Multiple Tesseract PSM modes
-- Automatic configuration comparison
-- Automatic selection of the strongest OCR result
-- Word-level OCR confidence scores
-- 80% minimum confidence filtering
+- Multiple Tesseract Page Segmentation Modes
+- Automatic OCR configuration comparison
+- Automatic best-result selection
+- Word-level confidence scores
+- Minimum 80% confidence filtering
 - Bounding boxes around validated words
-- Annotated output image
-- Extracted raw text
-- Confidence-filtered validated text
-- OCR confidence report
-- OCR mode comparison report
-- Summary report
+- Annotated image output
+- Raw extracted text output
+- Confidence-filtered validated text output
+- OCR confidence CSV report
+- OCR mode-comparison CSV report
+- OCR summary report
 
 ---
 
@@ -78,9 +56,9 @@ This project includes:
 
 - Python
 - OpenCV
+- NumPy
 - Tesseract OCR
 - pytesseract
-- NumPy
 - CSV
 - pathlib
 - Git
@@ -117,9 +95,42 @@ project-4-ocr-text-recognition/
 
 ---
 
+## Installation
+
+### 1. Install Python Packages
+
+Run:
+
+```bash
+pip install pytesseract opencv-python numpy
+```
+
+On Windows, if needed:
+
+```bash
+py -m pip install pytesseract opencv-python numpy
+```
+
+### 2. Install Tesseract OCR
+
+Tesseract OCR must be installed separately because `pytesseract` is only a Python wrapper.
+
+The default Windows installation path is:
+
+```text
+C:\Program Files\Tesseract-OCR\tesseract.exe
+```
+
+The Python script automatically checks:
+
+1. Whether `tesseract` is available through the system PATH
+2. Whether Tesseract exists in the default Windows installation folder
+
+---
+
 ## Input Image
 
-Place the input image inside:
+Place the test image inside:
 
 ```text
 sample-input/
@@ -131,33 +142,13 @@ Rename it:
 sample_document.png
 ```
 
-A clear image containing printed English text is recommended for the first test.
-
----
-
-## Installation
-
-Install the Python dependencies:
-
-```bash
-pip install pytesseract opencv-python numpy
-```
-
-Tesseract OCR must also be installed separately on Windows.
-
-The default installation location is:
-
-```text
-C:\Program Files\Tesseract-OCR\tesseract.exe
-```
-
-The Python script automatically checks this location.
+A clear image containing printed English text is recommended.
 
 ---
 
 ## How to Run
 
-From the repository root folder:
+From the repository root folder, run:
 
 ```bash
 python project-4-ocr-text-recognition/ocr_pipeline.py
@@ -171,59 +162,28 @@ py project-4-ocr-text-recognition/ocr_pipeline.py
 
 ---
 
-## Preprocessing Pipeline
-
-The system generates several image versions.
-
-### 1. Original Image
-
-The raw input image is saved for reference.
-
-### 2. Grayscale Conversion
-
-Color channels are removed to simplify visual analysis.
+## OCR Workflow
 
 ```text
-RGB Image
-→ Grayscale Intensity Matrix
+Input Image
+→ Load Image
+→ Deskew Image
+→ Convert to Grayscale
+→ Apply Gaussian Blur
+→ Apply Thresholding
+→ Run OCR Configurations
+→ Compare Results
+→ Select Best Configuration
+→ Filter by Confidence
+→ Draw Bounding Boxes
+→ Save Reports
 ```
-
-### 3. Gaussian Blur
-
-Minor noise and visual artifacts are reduced.
-
-```text
-Grayscale Image
-→ Smoothed Image
-```
-
-### 4. Deskewing
-
-The script detects text rotation and corrects tilted images.
-
-```text
-Tilted Text
-→ Horizontal Text Alignment
-```
-
-### 5. Otsu Thresholding
-
-The system calculates a global threshold and converts pixels into black or white values.
-
-```text
-Grayscale Pixel
-→ Black or White Pixel
-```
-
-### 6. Adaptive Thresholding
-
-Different areas of the image receive local threshold values. This is useful for uneven lighting.
 
 ---
 
-## OCR Configuration Testing
+## Preprocessing Modes
 
-The pipeline tests five preprocessing modes:
+The pipeline generates and tests five image versions:
 
 ```text
 original_deskewed
@@ -233,7 +193,66 @@ otsu_threshold
 adaptive_threshold
 ```
 
-It also tests four Tesseract Page Segmentation Modes:
+### 1. Original Deskewed Image
+
+The original image is corrected for rotation before OCR.
+
+### 2. Grayscale Image
+
+Color information is removed to simplify visual analysis.
+
+```text
+RGB Image
+→ Grayscale Intensity Matrix
+```
+
+### 3. Blurred Image
+
+Gaussian blur reduces minor artifacts and noise.
+
+```text
+Grayscale Image
+→ Smoothed Image
+```
+
+### 4. Otsu Threshold Image
+
+Otsu thresholding automatically calculates a global cutoff value and converts pixels into black or white values.
+
+```text
+Grayscale Pixel
+→ Black or White Pixel
+```
+
+### 5. Adaptive Threshold Image
+
+Adaptive thresholding calculates local thresholds for different areas of the image. This can help when lighting is uneven.
+
+---
+
+## Deskewing
+
+The pipeline detects text rotation and corrects tilted images before OCR.
+
+Example:
+
+```text
+Tilted Text
+→ Detected Rotation Angle
+→ Corrected Horizontal Text
+```
+
+In the tested sample, the detected deskew angle was:
+
+```text
+-0.63 degrees
+```
+
+---
+
+## Tesseract Page Segmentation Modes
+
+The pipeline tests four Tesseract Page Segmentation Modes:
 
 | PSM Mode | Description                  |
 | -------- | ---------------------------- |
@@ -242,31 +261,49 @@ It also tests four Tesseract Page Segmentation Modes:
 | `7`      | Single text line             |
 | `11`     | Sparse scattered text        |
 
-The complete pipeline tests:
+The system tests:
 
 ```text
-5 preprocessing modes × 4 PSM modes = 20 configurations
+5 preprocessing modes × 4 PSM modes = 20 OCR configurations
 ```
 
-The strongest configuration is selected automatically based on:
+The strongest result is selected automatically.
 
-- number of validated words
-- average confidence score
-- validated-word ratio
+---
+
+## Best-Result Selection Logic
+
+The OCR configurations are ranked using:
+
+1. Number of validated words
+2. Average confidence score
+3. Validated-word ratio
+
+The system selects the configuration with the strongest combined result.
 
 ---
 
 ## Confidence Filtering
 
-Each detected word receives a confidence score.
+Each detected word receives a confidence score from Tesseract OCR.
 
-The project uses an 80% minimum threshold:
+The project applies an 80% minimum confidence threshold:
 
 ```python
 MINIMUM_CONFIDENCE = 80.0
 ```
 
-Words below 80% confidence are recorded in the CSV report but excluded from the validated text output and annotated bounding boxes.
+Words with confidence below 80%:
+
+- remain visible in the confidence report
+- are excluded from the validated text output
+- do not receive bounding boxes in the annotated image
+
+Words with confidence at or above 80%:
+
+- appear in the validated text
+- receive a visual bounding box
+- contribute to the validated-word ratio
 
 ---
 
@@ -282,41 +319,40 @@ age of foolishness...
 
 ---
 
-## Example Output
+## Actual Test Result
+
+The pipeline automatically tested 20 OCR configurations and selected:
 
 ```text
-DecodeLabs Advanced OCR Text Recognition Pipeline
-======================================================================
+Selected preprocessing mode: original_deskewed
+Selected Tesseract PSM mode: 3
+Detected deskew angle: -0.63 degrees
+```
 
-Tesseract OCR configured successfully.
-Input image loaded successfully.
-Image preprocessing completed.
-Applied: grayscale, blur, deskewing, Otsu thresholding, adaptive thresholding.
+OCR performance:
 
-Testing multiple preprocessing modes and Tesseract PSM configurations...
-Tested 20 OCR configurations.
-
-----------------------------------------------------------------------
-
-Best OCR Configuration
-----------------------------------------------------------------------
-
-Selected preprocessing mode: grayscale
-Selected Tesseract PSM mode: 6
-Detected deskew angle: 0.00 degrees
-
-----------------------------------------------------------------------
-
-OCR Results
-----------------------------------------------------------------------
-
+```text
 Total detected words: 24
 Validated words with confidence >= 80%: 24
 Validated ratio: 100.00%
-Average detected-word confidence: 95.92%
+Average detected-word confidence: 95.96%
 ```
 
-Results may vary depending on the image.
+Extracted text:
+
+```text
+It was the best of
+times, it was the worst
+of times, it was the age
+of wisdom, it was the
+age of foolishness...
+```
+
+Validated text:
+
+```text
+It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness...
+```
 
 ---
 
@@ -324,19 +360,19 @@ Results may vary depending on the image.
 
 ### `01_original.png`
 
-The original input image.
+The original sample image.
 
 ### `02_grayscale.png`
 
-The grayscale version of the image.
+The grayscale version of the input image.
 
 ### `03_blurred.png`
 
-The Gaussian-blurred image.
+The image after Gaussian blur.
 
 ### `04_deskewed.png`
 
-The rotation-corrected image.
+The image after automatic rotation correction.
 
 ### `05_otsu_threshold.png`
 
@@ -348,19 +384,19 @@ The image after adaptive thresholding.
 
 ### `07_annotated_output.png`
 
-The visual output containing bounding boxes and confidence labels around validated words.
+The final visual output with bounding boxes and confidence labels around validated words.
 
 ### `extracted_text.txt`
 
-The complete OCR text extracted by the strongest OCR configuration.
+The complete text extracted by the strongest OCR configuration.
 
 ### `validated_text.txt`
 
-Only words with confidence scores of at least 80%.
+Only words that passed the 80% confidence threshold.
 
 ### `ocr_confidence_report.csv`
 
-Word-level OCR details:
+A word-level recognition report containing:
 
 ```text
 word
@@ -374,7 +410,7 @@ height
 
 ### `ocr_mode_comparison.csv`
 
-Performance comparison across all tested OCR configurations:
+A comparison report for all tested OCR configurations containing:
 
 ```text
 preprocessing_mode
@@ -388,25 +424,41 @@ raw_text
 
 ### `ocr_summary.txt`
 
-A readable summary of the selected OCR configuration, confidence scores, extracted text, and generated files.
+A readable report containing:
+
+- Tesseract executable path
+- detected deskew angle
+- selected preprocessing mode
+- selected PSM mode
+- total detected words
+- validated-word count
+- validated ratio
+- average confidence
+- raw extracted text
+- validated extracted text
+- generated file paths
 
 ---
 
 ## Validation Checklist
 
-| Requirement             | Implementation                                                       |
-| ----------------------- | -------------------------------------------------------------------- |
-| Library integration     | `pytesseract` and OpenCV                                             |
-| Image preprocessing     | Grayscale, blur, deskewing, Otsu thresholding, adaptive thresholding |
-| Confidence benchmarking | 80% minimum confidence gate                                          |
-| Visual confirmation     | Annotated image with bounding boxes                                  |
-| Text extraction         | Raw and validated text files                                         |
-| Comparison testing      | 20 OCR configurations                                                |
-| Reporting               | CSV reports and summary file                                         |
+| Requirement               | Implementation                           |
+| ------------------------- | ---------------------------------------- |
+| Library integration       | `pytesseract`, OpenCV, and NumPy         |
+| Raw visual input          | Sample image loaded from `sample-input/` |
+| Grayscale conversion      | Implemented                              |
+| Gaussian blur             | Implemented                              |
+| Deskewing                 | Implemented                              |
+| Thresholding              | Otsu and adaptive thresholding           |
+| OCR recognition           | Tesseract OCR                            |
+| Confidence benchmarking   | Minimum 80% confidence gate              |
+| Visual confirmation       | Annotated bounding boxes                 |
+| OCR configuration testing | 20 configurations                        |
+| Reporting                 | CSV and TXT reports                      |
 
 ---
 
-## Concepts Used
+## Concepts Demonstrated
 
 This project demonstrates:
 
@@ -420,40 +472,41 @@ This project demonstrates:
 - Thresholding
 - Otsu thresholding
 - Adaptive thresholding
-- Page segmentation modes
+- Tesseract Page Segmentation Modes
 - Confidence scores
 - Confidence filtering
 - Bounding boxes
 - CSV reporting
-- Automated model evaluation
+- Automatic model evaluation
 - Visual output generation
 
 ---
 
 ## Limitations
 
-- Recognition quality depends on image clarity.
-- Handwritten text may require a more specialized model.
-- Decorative fonts may reduce OCR accuracy.
-- A high confidence score does not always guarantee perfect recognition.
-- The current pipeline focuses on English printed text.
-- The script does not perform semantic correction after OCR extraction.
+- Recognition quality depends on image quality.
+- Blurry images may reduce OCR accuracy.
+- Handwritten text may require specialized models.
+- Decorative fonts may reduce recognition performance.
+- High confidence does not always guarantee perfect recognition.
+- The current version focuses on English printed text.
+- The pipeline does not apply semantic spelling correction after OCR.
 
 ---
 
 ## Possible Future Improvements
 
 - Add Arabic OCR support
-- Add multiple-language recognition
+- Add multilingual OCR
+- Process multiple images in batch
 - Add PDF page processing
-- Add batch image processing
+- Generate searchable PDFs
 - Add spelling correction
-- Add a graphical user interface
-- Add drag-and-drop file upload
 - Add document-type detection
-- Add searchable PDF generation
+- Build a graphical interface
+- Add drag-and-drop input
 - Add API endpoints
-- Deploy the pipeline as a web application
+- Deploy as a web application
 - Add object detection using MobileNet-SSD
 
 ---
